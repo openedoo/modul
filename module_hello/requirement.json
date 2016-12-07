@@ -1,0 +1,5 @@
+{
+    "name":"hello",
+    "requirement":["openedoo_core"],
+    "version":"0.0.1"
+}
