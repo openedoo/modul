@@ -31,7 +31,9 @@ def check_modul_available(url="https://api.github.com/orgs/openedoo/repos"):
 		else:
 			pass
 	return list_all
-def check_modul_requirement(url):
+def check_modul_requirement(url=None):
+	if url is None:
+		return "your field is null"
 	try:
 		response = get_url(url)
 		content = response['content']
@@ -41,12 +43,21 @@ def check_modul_requirement(url):
 	except Exception as e:
 		return e
 
-def download_modul_git(url):
-	try:
-		response = get_url(url)
-		return response
-	except Exception as e:
-		return e
-data = check_modul_available()
-download = download_modul_git('https://api.github.com/repos/openedoo/modul_hello/contents/')
-pprint.pprint (download)
+def find_modul(modul_name=None):
+	if modul_name is None:
+		return "your field is null"
+	data = check_modul_available()
+	number_akhir = len(data)
+	number_awal = 0
+	output = {'message':'modul not found'}
+	for number_awal in xrange(number_awal,number_akhir):
+		jumlah = (number_awal+1)-1
+		if modul_name in data[jumlah]['name']:
+			output = {'url':data[jumlah]['url'],'url_requirement':data[jumlah]['url_requirement']}
+			return output
+		else:
+			pass
+	return output
+#print data.index("modul_coba" in data)
+data = find_modul("modul_hello")
+print check_modul_requirement(data['url_requirement'])
