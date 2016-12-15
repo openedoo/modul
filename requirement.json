@@ -1,8 +1,9 @@
 {
     "name":"module_hello",
     "version":"0.0.1",
-    "path":"/openedoo/",
     "requirement":"openedoo_core",
     "pip_library":[],
-    "comment":"testing modul openedoo"
+    "comment":"testing modul openedoo",
+    "type":"end_point",
+    "url_endpoint":"/module_hello"
 }
