@@ -1,6 +1,6 @@
 from openedoo.core.libs import blueprint
 
-hello = blueprint('hello', __name__)
-@hello.route('/', methods=['POST', 'GET'])
+modul_hello = blueprint('modul_hello', __name__)
+@modul_hello.route('/', methods=['POST', 'GET'])
 def index():
 	return "Hello World"
