@@ -1,5 +1,5 @@
 {
-    "name":"module_hello",
+    "name":"modul_hello",
     "version":"0.0.1",
     "requirement":"openedoo_core",
     "pip_library":[],
